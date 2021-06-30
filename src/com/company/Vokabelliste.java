@@ -8,7 +8,17 @@ public class Vokabelliste {
         vokabelliste = new Vokabel[100];
     }
 
-    public void hinzufuegen(Vokabel newWord) {
+    public void hinzufuegen(String deutsch, String englisch) {
+        Vokabel neuVokabel = new Vokabel(deutsch, englisch);
+        for (int i = 0; i<vokabelliste.length; i++){
+            if (vokabelliste[i] == null) {
+                vokabelliste[i] = neuVokabel;
+                break;
+            }
+        }
+    }
+
+    public void vokabelnHinzufuegen(Vokabel newWord) {
         for (int i = 0; i<vokabelliste.length; i++){
             if (vokabelliste[i] == null) {
                 vokabelliste[i] = newWord;
@@ -39,6 +49,28 @@ public class Vokabelliste {
                 System.out.println("nicht enthlaten");
             }
         }
+    }
+
+    private void umtauschen(int a, int b) {
+        Vokabel speicher = vokabelliste[a];
+        vokabelliste[a] = vokabelliste[b];
+        vokabelliste[b] = speicher;
+    }
+
+    public int compare(){
+        return vokabelliste[0].getDeutsch().compareTo(vokabelliste[1].getDeutsch());
+    }
+
+    /*public void sortiernDeutsch() {
+        for (int i = 0; i < vokabelliste.length; i++) {
+            if (vokabelliste[i].getDeutsch().compareTo(vokabelliste[i+1].getDeutsch())) {
+                umtauschen(i, i+1);
+            }
+        }
+    }*/
+
+    public void sortierenEnglish() {
+
     }
 
 }
