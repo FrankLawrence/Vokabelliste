@@ -11,6 +11,7 @@ public class Main {
         //Vokabel1.anzeigen();
         Liste1.getVokabelliste();
         //Liste1.englisch("Hund");
-        Liste1.compare();
+        Liste1.sortierenDeutsch();
+        Liste1.getVokabelliste();
     }
 }

@@ -57,20 +57,34 @@ public class Vokabelliste {
         vokabelliste[b] = speicher;
     }
 
-    public int compare(){
-        return vokabelliste[0].getDeutsch().compareTo(vokabelliste[1].getDeutsch());
+    public void sortierenDeutsch() {
+        String d1,d2;
+
+        for (int anfang = 1; anfang < vokabelliste.length; anfang++)
+            for (int speicher=0; speicher < vokabelliste.length-1; speicher++) {
+                if (vokabelliste[speicher+1] != null) {
+                    d1 = vokabelliste[speicher].getDeutsch();
+                    d2 = vokabelliste[speicher + 1].getDeutsch();
+                    if (d1.compareTo(d2) > 0) {
+                        umtauschen(speicher, speicher + 1);
+                    }
+                } else {break;}
+            }
     }
 
-    /*public void sortiernDeutsch() {
-        for (int i = 0; i < vokabelliste.length; i++) {
-            if (vokabelliste[i].getDeutsch().compareTo(vokabelliste[i+1].getDeutsch())) {
-                umtauschen(i, i+1);
+    public void sortierenEnglisch() {
+        String d1,d2;
+
+        for (int anfang = 1; anfang < vokabelliste.length; anfang++)
+            for (int speicher=0; speicher < vokabelliste.length-1; speicher++)
+            {
+                d1 = vokabelliste[speicher].getEnglish();
+                d2 = vokabelliste[speicher+1].getEnglish();
+                if (d1.compareTo(d2) > 0)
+                {
+                    umtauschen(speicher, speicher+1);
+                }
             }
-        }
-    }*/
-
-    public void sortierenEnglish() {
-
     }
 
 }

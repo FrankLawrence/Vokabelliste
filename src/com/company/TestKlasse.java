@@ -1,9 +1,9 @@
 package com.company;
 
-public class Testklasse {
+public class TestKlasse {
     private Vokabelliste liste;
 
-    public Testklasse()
+    public TestKlasse()
     {
         liste = new Vokabelliste();
 
